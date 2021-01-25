@@ -1,8 +1,34 @@
+[[main]]
+  name = "Overview"
+  url = "/understanding-rio/overview"
+  weight = 10
+
+[[main]]
+  name = "Blog"
+  url = "/blog/"
+  weight = 20
+
+
 [[docs]]
   name = "Prologue"
   weight = 10
   identifier = "prologue"
-  url = "/docs/prologue/"
+  url = "/introduction"
+
+[[docs]]
+  name = "Overview"
+  weight = 30
+  identifier = "overview"
+  url = "/overview"
+
+
+
+[[docs]]
+  name = "Deep Dives"
+  weight = 40
+  identifier = "deep-dives"
+  url = "/deep-dives"
+
 
 [[docs]]
   name = "Help"
@@ -10,15 +36,6 @@
   identifier = "help"
   url = "/docs/help/"
 
-[[main]]
-  name = "Docs"
-  url = "/docs/prologue/introduction/"
-  weight = 10
-
-[[main]]
-  name = "Blog"
-  url = "/blog/"
-  weight = 20
 
 # [[social]]
 #   name = "Twitter"

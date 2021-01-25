@@ -1,0 +1,246 @@
+/* Most of it copied from theme/learn/static/css/theme-red.css */
+:root{
+    --MAIN-BG-color: #f6f6f6;
+    --MAIN-TEXT-color: #222222; /* Color of text by default */
+    --MAIN-TITLES-TEXT-color: #444444; /* Color of titles h2-h3-h4-h5 */
+    --MAIN-LINK-color: #dc1d30; /* Color of links */
+    --MAIN-LINK-HOVER-color: #dc1d30; /* Color of hovered links */
+    --MAIN-ANCHOR-color: #dc1d30; /* color of anchors on titles */
+
+    --MENU-HEADER-BG-color: #fff; /* Background color of menu header */
+    --MENU-HEADER-BORDER-color: #f6f6f6; /* Color of menu header border */
+    --MENU-HEADER-LINK-color: #222222; /* Color of menu header link */
+    --MENU-HEADER-LINK-HOVER-color: #222222; /* Color of menu header link, when header */
+
+    --MENU-SEARCH-BG-color: #f6f6f6; /* Search field background color (by default borders + icons) */
+    --MENU-SEARCH-BOX-color: #f6f6f6; /* Override search field border color */
+    --MENU-SEARCH-BOX-ICONS-color: #222222; /* Override search field icons color */
+
+    --MENU-SECTIONS-ACTIVE-BG-color: #fff; /* Background color of the active section and its childs */
+    --MENU-SECTIONS-BG-color: #fff; /* Background color of other sections */
+    --MENU-SECTIONS-LINK-color: #444444; /* Color of links in menu */
+    --MENU-SECTIONS-LINK-HOVER-color: #dc1d30; /* Color of links in menu, when hovered */
+    --MENU-SECTION-ACTIVE-CATEGORY-color: #dc1d30; /* Color of active category text */
+    --MENU-SECTION-ACTIVE-CATEGORY-BG-color: #fff; /* Color of background for the active category (only) */
+
+    --MENU-VISITED-color: #ff3333; /* Color of 'page visited' icons in menu */
+    --MENU-SECTION-HR-color: #2b2020; /* Color of <hr> separator in menu */
+}
+
+body {
+    color: var(--MAIN-TEXT-color) !important;
+    background: var(--MAIN-BG-color);
+}
+
+textarea:focus, input[type="email"]:focus, input[type="number"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="text"]:focus, input[type="url"]:focus, input[type="color"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="month"]:focus, input[type="time"]:focus, input[type="week"]:focus, select[multiple=multiple]:focus {
+    border-color: none;
+    box-shadow: none;
+}
+
+h2, h3, h4, h5 {
+    color: var(--MAIN-TITLES-TEXT-color) !important;
+}
+
+a {
+    color: var(--MAIN-LINK-color);
+}
+
+.anchor {
+    color: var(--MAIN-ANCHOR-color);
+}
+
+a:hover {
+    color: var(--MAIN-LINK-HOVER-color);
+}
+
+#sidebar ul li.visited > a .read-icon {
+	color: var(--MENU-VISITED-color);
+}
+
+#body a.highlight:after {
+    display: block;
+    content: "";
+    height: 1px;
+    width: 0%;
+    -webkit-transition: width 0.5s ease;
+    -moz-transition: width 0.5s ease;
+    -ms-transition: width 0.5s ease;
+    transition: width 0.5s ease;
+    background-color: var(--MAIN-LINK-HOVER-color);
+}
+#sidebar {
+	background-color: var(--MENU-SECTIONS-BG-color);
+}
+#sidebar #header-wrapper {
+    background: var(--MENU-HEADER-BG-color);
+    color: var(--MENU-SEARCH-BOX-color);
+    border-color: var(--MENU-HEADER-BORDER-color);
+}
+#sidebar .searchbox {
+	border-color: var(--MENU-SEARCH-BOX-color);
+    background: var(--MENU-SEARCH-BG-color);
+}
+#sidebar ul.topics > li.parent, #sidebar ul.topics > li.active {
+    background: var(--MENU-SECTIONS-ACTIVE-BG-color);
+}
+#sidebar .searchbox * {
+    color: var(--MENU-SEARCH-BOX-ICONS-color);
+}
+
+#sidebar a {
+    color: var(--MENU-SECTIONS-LINK-color);
+}
+
+#sidebar a:hover {
+    color: var(--MENU-SECTIONS-LINK-HOVER-color);
+}
+
+#sidebar ul li.active > a {
+    background: var(--MENU-SECTION-ACTIVE-CATEGORY-BG-color);
+    color: var(--MENU-SECTION-ACTIVE-CATEGORY-color) !important;
+}
+
+#sidebar hr {
+    border-color: var(--MENU-SECTION-HR-color);
+}
+
+/* Custom additions */
+
+#body .padding {
+    padding-left: 4rem;
+    padding-right: 4rem;
+}
+
+#body-inner {
+    background: #fff;
+    padding: 0.5rem 3rem 3rem 3rem;
+    margin-bottom: 0;
+}
+
+#logo {
+    display: flex;
+    height: 60px;
+}
+
+#logo > img {
+    background: #fff;
+    border-radius: 100%;
+    width: 50px;
+    height: 50px;
+    margin: auto;
+}
+
+#logo > a {
+    margin: auto;
+    color: var(--MENU-HEADER-LINK-color);
+    font-size: 16px;
+}
+
+#logo > a:hover {
+    color: var(--MENU-HEADER-LINK-color);
+}
+
+#TableOfContents > ul > li > ul > li > a {
+    font-weight: unset;
+}
+
+pre {
+    background: #f6f6f6;
+}
+
+.hljs {
+    color: #222222;
+    background: #f6f6f6;
+}
+
+pre .copy-to-clipboard {
+    background-color: #FFF7DD;
+}
+
+pre .copy-to-clipboard:hover {
+    background-color: #e8e2cd;
+}
+
+#sidebar ul li li {
+    padding-left: 0.6rem;
+}
+
+b, strong {
+    font-weight: 500;
+}
+
+#body #breadcrumbs {
+    width: 95%;
+}
+
+#body .pkg-import-btn {
+    display: inline-block;
+    width: 224px;
+    height: 37px;
+    margin: 0;
+}
+
+/* Fix search autocomplete box scroll bug */
+.autocomplete-suggestions  {
+    position: fixed;
+    top: 123px !important;
+}
+
+@media only screen and (min-width: 768px) {
+    .collapse #sidebar {
+        display: none;
+    }
+
+    .collapse #body {
+        margin-left: 0;
+    }
+
+    #top-bar {
+        position: relative;
+    }
+
+    .sidebar-collapse-btn {
+        position: absolute;
+        width: 16px;
+        padding: 0;
+        right: 10px;
+        bottom: 18px;
+        padding: 0;
+    }
+
+    #body .sidebar-collapse-btn > img {
+        margin: 0;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .sidebar-collapse-btn {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 959px)  {
+    #body .highlightable.padding {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+@media only screen and (max-width: 520px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    #body .highlightable.padding {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    #chapter #body-inner {
+        max-width: 100%;
+    }
+
+    #body-inner {
+        padding: 15px;
+    }
+}

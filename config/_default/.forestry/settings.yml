@@ -5,6 +5,11 @@ admin_path:
 webhook_url: 
 sections:
 - type: directory
+  path: content/docs/deep-dives
+  label: Deep Dives
+  create: all
+  match: "**/*"
+- type: directory
   path: content/docs/overview
   label: Overview
   create: all

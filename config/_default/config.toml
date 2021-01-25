@@ -7,87 +7,69 @@ enableRobotsTXT = true
 languageCode = "en-US"
 paginate = 7
 rssLimit = 10
-
-# add redirects/headers
-[outputs]
-home = ["HTML", "RSS", "REDIRECTS", "HEADERS"]
-section = ["HTML", "RSS", "SITEMAP"]
-
-# remove .{ext} from text/netlify
+[markup.goldmark.extensions]
+linkify = false
+[markup.goldmark.renderer]
+unsafe = true
+[markup.highlight]
+codeFences = true
+guessSyntax = false
+hl_Lines = ""
+lineNoStart = 1
+lineNos = false
+lineNumbersInTable = true
+noClasses = false
+style = "dracula"
+tabWidth = 4
 [mediaTypes."text/netlify"]
-suffixes = [""]
 delimiter = ""
-
-# add output format for netlify _redirects
-[outputFormats.REDIRECTS]
-mediaType = "text/netlify"
-baseName = "_redirects"
-isPlainText = true
-notAlternative = true
-
-# add output format for netlify _headers
+suffixes = [""]
+[[module.mounts]]
+source = "assets"
+target = "assets"
+[[module.mounts]]
+source = "static"
+target = "static"
+[[module.mounts]]
+source = "node_modules/lazysizes"
+target = "assets/js/vendor/lazysizes"
+[[module.mounts]]
+source = "node_modules/instant.page"
+target = "assets/js/vendor/instant.page"
+[[module.mounts]]
+source = "node_modules/lazysizes"
+target = "assets/js/vendor/lazysizes"
+[[module.mounts]]
+source = "node_modules/flexsearch"
+target = "assets/js/vendor/flexsearch"
+[[module.mounts]]
+source = "node_modules/clipboard"
+target = "assets/js/vendor/clipboard"
 [outputFormats.HEADERS]
-mediaType = "text/netlify"
 baseName = "_headers"
 isPlainText = true
+mediaType = "text/netlify"
 notAlternative = true
-
-# add output format for section sitemap.xml
+[outputFormats.REDIRECTS]
+baseName = "_redirects"
+isPlainText = true
+mediaType = "text/netlify"
+notAlternative = true
 [outputFormats.SITEMAP]
-mediaType = "application/xml"
 baseName = "sitemap"
 isHTML = false
 isPlainText = true
+mediaType = "application/xml"
 noUgly = true
-rel  = "sitemap"
-
-[markup]
-  [markup.goldmark]
-    [markup.goldmark.extensions]
-      linkify = false
-    [markup.goldmark.renderer]
-      unsafe = true
-  [markup.highlight]
-    codeFences = true
-    guessSyntax = false
-    hl_Lines = ""
-    lineNoStart = 1
-    lineNos = false
-    lineNumbersInTable = true
-    noClasses = false
-    style = "dracula"
-    tabWidth = 4
-
-[sitemap]
-  changefreq = "weekly"
-  filename = "sitemap.xml"
-  priority = 0.5
-
-[taxonomies]
-  contributor = "contributors"
-
+rel = "sitemap"
+[outputs]
+home = ["HTML", "RSS", "REDIRECTS", "HEADERS"]
+section = ["HTML", "RSS", "SITEMAP"]
 [permalinks]
-  blog = "/blog/:title/"
-
-[module]
-  [[module.mounts]]
-    source = "assets"
-    target = "assets"
-  [[module.mounts]]
-    source = "static"
-    target = "static"
-  [[module.mounts]]
-    source = "node_modules/lazysizes"
-    target = "assets/js/vendor/lazysizes"
-  [[module.mounts]]
-    source = "node_modules/instant.page"
-    target = "assets/js/vendor/instant.page"
-  [[module.mounts]]
-    source = "node_modules/lazysizes"
-    target = "assets/js/vendor/lazysizes"
-  [[module.mounts]]
-    source = "node_modules/flexsearch"
-    target = "assets/js/vendor/flexsearch"
-  [[module.mounts]]
-    source = "node_modules/clipboard"
-    target = "assets/js/vendor/clipboard"
+blog = "/blog/:title/"
+[sitemap]
+changefreq = "weekly"
+filename = "sitemap.xml"
+priority = 0.5
+[taxonomies]
+contributor = "contributors"
